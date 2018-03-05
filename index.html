@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto|Krona+One|Ubuntu" rel="stylesheet">
 	<!--Enlazar la libreria de reac-->
 	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 	<!--Enlazar el dom virtual -->
@@ -13,13 +13,11 @@
 	<!--Babel para jsx-->
 	<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 	<title>Document</title>
-
 </head>
-
 <body>
     <div id="app"></div>
     <script type="text/babel">
-         /* Cada componente de react necesita una clase, cada componente que se
+    /* Cada componente de react necesita una clase, cada componente que se
     cree se extenderá de un componente*/
     class Pet extends React.Component {
      render(){
@@ -32,17 +30,16 @@
 };
 
 const changeText= () => {
-	let fontType = [ "Arial", "Verdana", "Helvetica"];
+	let fontType = [ 'Roboto', 'Krona+One','Ubuntu'];
 	let num;
 	num=Math.floor(Math.random()*3);
   return fontType[num];
 }
-
+console.log(changeText());
 let color=changeColor();
 let typetext=changeText();
          //Definir estilos desde js
          const liStyle = {fontSize: '1.5em'};
-
          return (
              <div className ="card" style = {{background:color,fontFamily:typetext}}>
                 <h2 className="name">Mozza</h2>
@@ -59,6 +56,6 @@ let typetext=changeText();
       }
    //Ahora utilizamos el DOM para crear el elemento Pet(componente) estará dentro de app 
   ReactDOM.render(<Pet/>, document.getElementById('app'));
-    </script>
+  </script>
 </body>
 </html>
